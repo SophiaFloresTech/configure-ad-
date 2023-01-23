@@ -6,9 +6,7 @@
 This tutorial outlines the implementation of on-premises Active Directory within Azure Virtual Machines.<br />
 
 
-<h2>Video Demonstration</h2>
 
-- ### [YouTube: How to Deploy on-premises Active Directory within Azure Compute](https://www.youtube.com)
 
 <h2>Environments and Technologies Used</h2>
 
@@ -24,33 +22,39 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>High-Level Deployment and Configuration Steps</h2>
 
-- Step 1
-- Step 2
-- Step 3
-- Step 4
+- Server Manager
+- Install Active Directory
+- Add Roles and Features
 
 <h2>Deployment and Configuration Steps</h2>
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
+<img src="https://i.imgur.com/y3rSyWx.png"/>
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
+<img src="https://i.imgur.com/AfFKLYE.png"/>
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
+<img src="https://i.imgur.com/rol4WUn.png"/>
+
+Install Active Directory
+  -  Install Active Directory Domain Services (Server Manager) 
+  -  Promote as a DC: Setup a new forest as mydomain.com  
+  -  Restart and then log back into DC-1 as user: mydomain.com\labuser 
+
+
+<img src="https://i.imgur.com/C7qgYWP.png"/>
+
+ - Create an Admin and Normal User Account in AD
+ 
+ _ In Active Directory Users and Computers (ADUC), create an Organizational Unit (OU) called “_EMPLOYEES” 
+ 
+ _ Create a new OU named “_ADMINS” 
+ 
+ _ Create a new employee named “Jane Doe” (same password) with the username of “jane_admin” 
+ 
+ _ Add jane_admin to the “Domain Admins” Security Group 
+ 
+ _ Log out/close the Remote Desktop connection to DC-1 and log back in as “mydomain.com\jane_admin” 
+ 
+ _ User jane_admin as your admin account from now on
+
+
